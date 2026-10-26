@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grand Horizon – Luxury Stay & Resort. An exquisite five-star hotel experience featuring deluxe rooms, ocean view suites, gourmet dining, and premier wellness.">
+  <meta name="keywords" content="luxury hotel, resort, suites, grand horizon, vacation, booking, stay">
+  <meta name="author" content="Grand Horizon Resort">
+  <title>Grand Horizon – Luxury Stay & Resort</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Google Fonts: Playfair Display (Serif Elegance) & Plus Jakarta Sans (Modern Clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       HEADER & STICKY NAVIGATION
+  ============================================== -->
+  <header class="site-header" id="header">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <!-- Logo -->
+      <a href="#home" class="brand-logo" id="brand-logo">
+        <span class="logo-icon"><i class="fa-solid fa-crown"></i></span>
+        <div class="logo-text">
+          <span class="brand-title">GRAND HORIZON</span>
+          <span class="brand-subtitle">LUXURY STAY & RESORT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="#rooms" class="nav-link">Rooms & Suites</a></li>
+        <li class="nav-item"><a href="#offers" class="nav-link">Offers</a></li>
+        <li class="nav-item"><a href="#amenities" class="nav-link">Amenities</a></li>
+        <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="#about" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Utilities -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button type="button" class="action-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <i class="fa-solid fa-moon theme-icon-dark"></i>
+          <i class="fa-solid fa-sun theme-icon-light"></i>
+        </button>
+
+        <!-- My Bookings Button -->
+        <button type="button" class="action-btn my-bookings-btn" id="open-my-bookings" aria-label="View My Bookings" title="My Saved Bookings">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span class="action-btn-text">My Bookings</span>
+          <span class="badge" id="bookings-count-badge">0</span>
+        </button>
+
+        <!-- Book Now CTA -->
+        <button type="button" class="btn btn-gold nav-cta" id="nav-book-btn">
+          <span>Book Now</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Drawer Backdrop & Off-Canvas -->
+  <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <span class="logo-icon"><i class="fa-solid fa-crown"></i></span>
+        <div class="logo-text">
+          <span class="brand-title">GRAND HORIZON</span>
+          <span class="brand-subtitle">RESORT & SPA</span>
+        </div>
+      </div>
+      <button type="button" class="close-drawer-btn" id="close-drawer-btn" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#rooms" class="mobile-nav-link"><i class="fa-solid fa-bed"></i> Rooms & Suites</a></li>
+      <li><a href="#offers" class="mobile-nav-link"><i class="fa-solid fa-tag"></i> Special Offers</a></li>
+      <li><a href="#amenities" class="mobile-nav-link"><i class="fa-solid fa-spa"></i> Amenities</a></li>
+      <li><a href="#gallery" class="mobile-nav-link"><i class="fa-solid fa-images"></i> Gallery</a></li>
+      <li><a href="#about" class="mobile-nav-link"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+      <li><a href="#contact" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <button type="button" class="btn btn-outline-gold w-100 mb-2" id="mobile-my-bookings-btn">
+        <i class="fa-solid fa-calendar-check"></i> My Bookings (<span id="mobile-badge-count">0</span>)
+      </button>
+      <button type="button" class="btn btn-gold w-100" id="mobile-book-now-btn">
+        <i class="fa-solid fa-key"></i> Book Your Stay
+      </button>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ==============================================
+         1. HERO SECTION
+    ============================================== -->
+    <section class="hero-section" id="home">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-container container">
+        <div class="hero-content">
+          <div class="hero-badge reveal">
+            <span class="star-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span>AN UNMATCHED SANCTUARY OF ELEGANCE</span>
+          </div>
+
+          <h1 class="hero-title reveal delay-1">
+            Experience Luxury <br><span class="text-gold-gradient">Beyond Expectations</span>
+          </h1>
+
+          <p class="hero-subtitle reveal delay-2">
+            Discover exceptional comfort, elegant rooms, and unforgettable hospitality nestled along pristine coastal vistas.
+          </p>
+
+          <div class="hero-buttons reveal delay-3">
+            <a href="#rooms" class="btn btn-gold">
+              <i class="fa-solid fa-compass"></i>
+              <span>Explore Rooms</span>
+            </a>
+            <button type="button" class="btn btn-outline" id="hero-book-btn">
+              <i class="fa-solid fa-calendar-plus"></i>
+              <span>Book Your Stay</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Floating Glassmorphism Quick Search Availability Panel -->
+        <div class="hero-search-card glass-panel reveal delay-4" id="quick-search-panel">
+          <div class="search-card-header">
+            <span class="search-card-tag"><i class="fa-solid fa-magnifying-glass"></i> Quick Reservation Search</span>
+            <span class="demo-tag"><i class="fa-solid fa-flask"></i> Demo System</span>
+          </div>
+          <form class="hero-search-form" id="hero-search-form" novalidate>
+            <div class="search-field">
+              <label for="quick-checkin"><i class="fa-regular fa-calendar-days"></i> Check-in</label>
+              <input type="date" id="quick-checkin" name="checkin" required>
+            </div>
+
+            <div class="search-field">
+              <label for="quick-checkout"><i class="fa-regular fa-calendar-check"></i> Check-out</label>
+              <input type="date" id="quick-checkout" name="checkout" required>
+            </div>
+
+            <div class="search-field">
+              <label for="quick-guests"><i class="fa-solid fa-user-group"></i> Guests</label>
+              <select id="quick-guests" name="guests">
+                <option value="1">1 Adult</option>
+                <option value="2" selected>2 Adults</option>
+                <option value="3">3 Adults</option>
+                <option value="4">4 Adults</option>
+                <option value="5">5+ Adults / Family</option>
+              </select>
+            </div>
+
+            <div class="search-field">
+              <label for="quick-rooms"><i class="fa-solid fa-door-open"></i> Rooms</label>
+              <select id="quick-rooms" name="rooms">
+                <option value="1" selected>1 Room</option>
+                <option value="2">2 Rooms</option>
+                <option value="3">3 Rooms</option>
+                <option value="4">4+ Rooms</option>
+              </select>
+            </div>
+
+            <div class="search-submit">
+              <button type="submit" class="btn btn-gold search-btn">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <span>Check Availability</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#rooms" class="scroll-down-indicator" aria-label="Scroll down to rooms">
+        <span class="mouse-icon"><span class="wheel"></span></span>
+        <span class="indicator-text">Discover</span>
+      </a>
+    </section>
+
+    <!-- ==============================================
+         2. ROOMS & SUITES SECTION
+    ============================================== -->
+    <section class="section rooms-section" id="rooms">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">ACCOMMODATIONS</span>
+          <h2 class="section-title">Rooms &amp; Signature Suites</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            Immerse yourself in refined luxury. Each living space offers bespoke artisan furnishings, panoramic balconies, and world-class in-room comforts.
+          </p>
+        </div>
+
+        <!-- Filter & Sort Control Bar -->
+        <div class="rooms-controls glass-panel reveal">
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Room Category Filters">
+            <button type="button" class="filter-tab active" data-filter="all">All Accommodations</button>
+            <button type="button" class="filter-tab" data-filter="deluxe">Deluxe Rooms</button>
+            <button type="button" class="filter-tab" data-filter="executive">Executive</button>
+            <button type="button" class="filter-tab" data-filter="suite">Suites &amp; Villas</button>
+          </div>
+
+          <!-- Sort Select -->
+          <div class="sort-wrapper">
+            <label for="room-sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort By:</label>
+            <select id="room-sort-select" class="sort-select">
+              <option value="featured">Featured First</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="capacity">Guest Capacity</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Rooms Grid Container (Populated via JS with rich fallback) -->
+        <div class="rooms-grid" id="rooms-grid">
+          <!-- Room cards will be dynamically rendered and updated by script.js -->
+        </div>
+
+        <!-- Section Bottom Help Notice -->
+        <div class="rooms-footer-note text-center reveal">
+          <p><i class="fa-solid fa-circle-info text-gold"></i> Need personalized presidential suites or long-term holiday bookings? <a href="#contact" class="link-gold">Speak directly with our concierge</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         3. SPECIAL OFFERS SECTION
+    ============================================== -->
+    <section class="section offers-section" id="offers">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">EXCLUSIVE PRIVILEGES</span>
+          <h2 class="section-title">Special Packages &amp; Seasonal Offers</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            Elevate your journey with our thoughtfully crafted packages, combining luxury accommodations with Michelin-star dining, spa rituals, and curated experiences.
+          </p>
+        </div>
+
+        <div class="offers-grid" id="offers-grid">
+          <!-- Offer cards rendered dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         4. AMENITIES SECTION
+    ============================================== -->
+    <section class="section amenities-section" id="amenities">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">UNRIVALLED FACILITIES</span>
+          <h2 class="section-title">Curated Resort Amenities</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            Designed to rejuvenate mind and body, our five-star amenities ensure every moment of your stay is effortless, invigorating, and completely bespoke.
+          </p>
+        </div>
+
+        <div class="amenities-grid">
+          <!-- 1. Swimming Pool -->
+          <div class="amenity-card glass-panel reveal">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-person-swimming"></i>
+            </div>
+            <h3 class="amenity-title">Infinity Swimming Pool</h3>
+            <p class="amenity-desc">Heated horizon infinity pool with private cabanas, panoramic coastal views, and dedicated poolside beverage service.</p>
+            <span class="amenity-tag">Open 6:00 AM – 10:00 PM</span>
+          </div>
+
+          <!-- 2. Fine Dining Restaurant -->
+          <div class="amenity-card glass-panel reveal delay-1">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <h3 class="amenity-title">Fine Dining Restaurant</h3>
+            <p class="amenity-desc">Award-winning gastronomic cuisine by Michelin-acclaimed chefs showcasing global delicacies, vintage cellars, and oceanfront terraces.</p>
+            <span class="amenity-tag">Breakfast &bull; Lunch &bull; Dinner</span>
+          </div>
+
+          <!-- 3. Spa & Wellness -->
+          <div class="amenity-card glass-panel reveal delay-2">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <h3 class="amenity-title">Royal Spa &amp; Wellness</h3>
+            <p class="amenity-desc">Holistic Ayurvedic therapies, aromatherapy massages, steam sauna, and Himalayan salt stone relaxation chambers.</p>
+            <span class="amenity-tag">Signature Rejuvenation</span>
+          </div>
+
+          <!-- 4. Fitness Center -->
+          <div class="amenity-card glass-panel reveal delay-3">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <h3 class="amenity-title">Elite Fitness Center</h3>
+            <p class="amenity-desc">State-of-the-art Technogym cardio and strength equipment, sunrise yoga pavilion, and certified private fitness trainers.</p>
+            <span class="amenity-tag">24 Hours Access</span>
+          </div>
+
+          <!-- 5. Free Wi-Fi -->
+          <div class="amenity-card glass-panel reveal">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-wifi"></i>
+            </div>
+            <h3 class="amenity-title">High-Speed Wi-Fi</h3>
+            <p class="amenity-desc">Complimentary gigabit fiber-optic Wi-Fi throughout all guest suites, private gardens, conference halls, and pool decks.</p>
+            <span class="amenity-tag">Ultra High-Speed</span>
+          </div>
+
+          <!-- 6. Airport Transfers -->
+          <div class="amenity-card glass-panel reveal delay-1">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-car-side"></i>
+            </div>
+            <h3 class="amenity-title">Airport Chauffeur</h3>
+            <p class="amenity-desc">Seamless luxury transfers in our private fleet of premium luxury sedans with chilled refreshments and concierge greeting.</p>
+            <span class="amenity-tag">On Request 24/7</span>
+          </div>
+
+          <!-- 7. Conference Rooms -->
+          <div class="amenity-card glass-panel reveal delay-2">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3 class="amenity-title">Conference &amp; Ballrooms</h3>
+            <p class="amenity-desc">Acoustically engineered executive boardrooms, grand ballrooms for galas, and 4K teleconferencing suites.</p>
+            <span class="amenity-tag">Capacity up to 400</span>
+          </div>
+
+          <!-- 8. 24/7 Room Service -->
+          <div class="amenity-card glass-panel reveal delay-3">
+            <div class="amenity-icon-box">
+              <i class="fa-solid fa-bell-concierge"></i>
+            </div>
+            <h3 class="amenity-title">24/7 Butler &amp; In-Room Dining</h3>
+            <p class="amenity-desc">Round-the-clock dedicated butler assistance, bespoke in-suite gourmet dining, and prompt luggage assistance.</p>
+            <span class="amenity-tag">Personalized Service</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         5. GALLERY SECTION
+    ============================================== -->
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">VISUAL JOURNEY</span>
+          <h2 class="section-title">The Grand Horizon Gallery</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            Take a visual tour through our architecture, ocean suites, tranquil pools, and gourmet dining rooms. Click any photograph to explore in high definition.
+          </p>
+        </div>
+
+        <!-- Gallery Category Tabs -->
+        <div class="gallery-tabs reveal">
+          <button type="button" class="gallery-tab active" data-gallery-filter="all">All Photos</button>
+          <button type="button" class="gallery-tab" data-gallery-filter="rooms">Rooms &amp; Suites</button>
+          <button type="button" class="gallery-tab" data-gallery-filter="dining">Fine Dining</button>
+          <button type="button" class="gallery-tab" data-gallery-filter="pool">Pool &amp; Spa</button>
+          <button type="button" class="gallery-tab" data-gallery-filter="exterior">Resort Exterior</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Gallery cards populated dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         6. ABOUT US SECTION
+    ============================================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Column: Story & Philosophy -->
+          <div class="about-content reveal">
+            <span class="section-subtitle">OUR HERITAGE &amp; PASSION</span>
+            <h2 class="section-title">A Symphony of Coastal Serenity &amp; Aristocratic Luxury</h2>
+            <div class="gold-divider align-left"><span>✦</span></div>
+
+            <p class="about-text">
+              Founded with the vision to redefine luxury hospitality, <strong>Grand Horizon – Luxury Stay &amp; Resort</strong> seamlessly blends classical architectural grandeur with intuitive, heartfelt service. Our sanctuary is sculpted along sun-kissed coastlines, offering discerning travelers an oasis of calm.
+            </p>
+            <p class="about-text">
+              Every detail—from hand-woven linens and bespoke scents to locally sourced organic cuisine—is crafted to orchestrate an unforgettable escape. Whether you are retreating for a peaceful seaside holiday or hosting an executive symposium, our dedicated concierge team ensures absolute perfection.
+            </p>
+
+            <div class="about-features">
+              <div class="about-feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+                <div>
+                  <h4>World Luxury Hotel Awards Winner</h4>
+                  <p>Recognized globally for premier architectural innovation and green resort sustainability.</p>
+                </div>
+              </div>
+              <div class="about-feature-item">
+                <div class="feature-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div>
+                  <h4>Eco-Conscious Luxury</h4>
+                  <p>100% solar-assisted energy, single-use plastic elimination, and reef preservation efforts.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a href="#rooms" class="btn btn-gold">
+                <span>View Accommodations</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn btn-outline">
+                <span>Contact Concierge</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Images & Highlights -->
+          <div class="about-visuals reveal delay-1">
+            <div class="about-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=80" alt="Grand Horizon Hotel Facade at Twilight" class="about-main-img" loading="lazy">
+              <div class="about-float-card glass-panel">
+                <div class="float-card-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+                <div class="float-card-text">
+                  <span class="float-card-number">18+</span>
+                  <span class="float-card-label">Years of Unrivalled Hospitality Excellence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Illustrative Statistics Counter -->
+        <div class="stats-container glass-panel reveal" id="stats-section">
+          <div class="stat-card">
+            <span class="stat-number" data-target="120">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Luxury Rooms &amp; Villas</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="18">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="99">0</span><span class="stat-plus">.4%</span>
+            <span class="stat-label">Guest Satisfaction Rate</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Michelin Star Master Chefs</span>
+          </div>
+        </div>
+        <p class="stats-disclaimer text-center">* Metrics presented above are illustrative demonstration figures for academic evaluation.</p>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         7. TESTIMONIALS SECTION
+    ============================================== -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">GUEST STORIES</span>
+          <h2 class="section-title">Words from Our Esteemed Guests</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            Discover how guests from around the globe describe their stay at Grand Horizon.
+          </p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="carousel-wrapper reveal" id="testimonial-carousel-wrapper">
+          <button type="button" class="carousel-btn prev-btn" id="carousel-prev" aria-label="Previous testimonial">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="testimonial-track">
+              <!-- Testimonial slides populated dynamically by script.js -->
+            </div>
+          </div>
+
+          <button type="button" class="carousel-btn next-btn" id="carousel-next" aria-label="Next testimonial">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Carousel Indicators / Dots -->
+        <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Testimonial Navigation Dots">
+          <!-- Dots dynamically rendered by script.js -->
+        </div>
+        <p class="text-center text-muted mt-2 demo-disclaimer-small">* Sample illustrative reviews for demonstration purposes.</p>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         8. CONTACT & LOCATION SECTION
+    ============================================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header text-center reveal">
+          <span class="section-subtitle">GET IN TOUCH</span>
+          <h2 class="section-title">Concierge &amp; Location</h2>
+          <div class="gold-divider"><span>✦</span></div>
+          <p class="section-desc">
+            We are here to assist with special arrangements, airport chauffeur bookings, and bespoke requests.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info & Demo Map -->
+          <div class="contact-info-col reveal">
+            <div class="contact-card glass-panel mb-3">
+              <h3 class="contact-card-title"><i class="fa-solid fa-hotel text-gold"></i> Grand Horizon Bayview</h3>
+              <p class="contact-card-desc">Nestled in serene tropical palm groves facing the Arabian Sea coast.</p>
+
+              <ul class="contact-details-list">
+                <li>
+                  <div class="icon-circle"><i class="fa-solid fa-location-dot"></i></div>
+                  <div>
+                    <strong>Resort Address</strong>
+                    <span>Bayview Boulevard, Candolim Beach Road, North Goa 403515, India (Demo)</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <strong>Direct Concierge</strong>
+                    <span>+91 (832) 555-0199 / +91 (832) 555-0198</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-circle"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <strong>Reservations &amp; Enquiries</strong>
+                    <span>concierge@grandhorizon-demo.com</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
+                  <div>
+                    <strong>Operating Hours</strong>
+                    <span>Front Desk: 24/7 &bull; Check-in: 2:00 PM &bull; Check-out: 12:00 PM</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Demonstration Map Component -->
+            <div class="demo-map-card glass-panel">
+              <div class="demo-map-header">
+                <span><i class="fa-solid fa-map-location-dot text-gold"></i> Demonstration Map Location</span>
+                <span class="badge">Goa Coastline</span>
+              </div>
+              <div class="map-placeholder-box">
+                <div class="map-bg-grid"></div>
+                <div class="map-pin-pulse">
+                  <div class="pulse-ring"></div>
+                  <div class="map-pin"><i class="fa-solid fa-crown"></i></div>
+                  <div class="map-tooltip">
+                    <strong>Grand Horizon Resort</strong>
+                    <span>Candolim Beach, Goa</span>
+                  </div>
+                </div>
+                <div class="map-controls-mock">
+                  <span><i class="fa-solid fa-plus"></i></span>
+                  <span><i class="fa-solid fa-minus"></i></span>
+                </div>
+                <div class="map-water-badge">Arabian Sea Shore</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Message Form -->
+          <div class="contact-form-col reveal delay-1">
+            <div class="contact-form-card glass-panel">
+              <div class="form-header">
+                <h3>Send an Enquiry</h3>
+                <p>Have questions regarding special itineraries or event venues? Send us a note.</p>
+              </div>
+
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contact-name">Your Full Name <span class="required">*</span></label>
+                    <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+                    <span class="error-msg" id="name-error">Please enter your name.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="contact-email" name="email" class="form-input" placeholder="eleanor@example.com" required>
+                    <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject">Subject <span class="required">*</span></label>
+                  <select id="contact-subject" name="subject" class="form-input" required>
+                    <option value="">Select an inquiry type</option>
+                    <option value="reservation">Room Reservation &amp; Rates</option>
+                    <option value="airport">Airport Chauffeur Transfer</option>
+                    <option value="dining">Private Dining &amp; Events</option>
+                    <option value="spa">Royal Spa Appointments</option>
+                    <option value="other">General Hospitality Inquiry</option>
+                  </select>
+                  <span class="error-msg" id="subject-error">Please select a subject.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message">Your Message <span class="required">*</span></label>
+                  <textarea id="contact-message" name="message" rows="5" class="form-input" placeholder="How may our hospitality team assist you today?" required></textarea>
+                  <span class="error-msg" id="message-error">Please enter your message (minimum 10 characters).</span>
+                </div>
+
+                <div class="form-demo-alert">
+                  <i class="fa-solid fa-circle-info"></i> Note: This is an academic demo contact form. Messages are simulated locally with feedback.
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100" id="contact-submit-btn">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================
+       9. FOOTER
+  ============================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <!-- Brand Summary -->
+        <div class="footer-col footer-brand-col">
+          <a href="#home" class="brand-logo mb-2">
+            <span class="logo-icon"><i class="fa-solid fa-crown"></i></span>
+            <div class="logo-text">
+              <span class="brand-title">GRAND HORIZON</span>
+              <span class="brand-subtitle">LUXURY STAY &amp; RESORT</span>
+            </div>
+          </a>
+          <p class="footer-desc">
+            Grand Horizon is a hallmark of world-class bespoke hospitality, offering sanctuary to those who cherish serenity, authentic luxury, and unforgettable seaside grandeur.
+          </p>
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://tripadvisor.com" target="_blank" rel="noopener noreferrer" aria-label="TripAdvisor" class="social-link"><i class="fa-solid fa-hotel"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms &amp; Suites</a></li>
+            <li><a href="#offers">Special Offers</a></li>
+            <li><a href="#amenities">Resort Amenities</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#about">About Our Story</a></li>
+            <li><a href="#contact">Contact Concierge</a></li>
+          </ul>
+        </div>
+
+        <!-- Accommodations -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Suites &amp; Villas</h4>
+          <ul class="footer-links">
+            <li><a href="#rooms" data-preselect="deluxe">Deluxe Room</a></li>
+            <li><a href="#rooms" data-preselect="executive">Executive Suite</a></li>
+            <li><a href="#rooms" data-preselect="ocean">Ocean View Suite</a></li>
+            <li><a href="#rooms" data-preselect="presidential">Presidential Suite</a></li>
+            <li><a href="#rooms">Royal Penthouse Villa</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-col footer-newsletter-col">
+          <h4 class="footer-heading">The Horizon Journal</h4>
+          <p class="newsletter-desc">Subscribe to receive exclusive seasonal privileges, secret recipes from our master chefs, and luxury travel memoirs.</p>
+
+          <form id="newsletter-form" class="newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletter-email" placeholder="Enter your email address" class="newsletter-input" required>
+              <button type="submit" class="btn btn-gold newsletter-btn" aria-label="Subscribe to newsletter">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <span class="error-msg" id="newsletter-error">Please enter a valid email address.</span>
+            <span class="newsletter-note"><i class="fa-solid fa-lock"></i> Pure demo storage. No spam, ever.</span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="copyright-text">
+            &copy; 2026 <strong>Grand Horizon – Luxury Stay &amp; Resort</strong>. All Rights Reserved. Built for College Practical Demonstration &amp; Viva.
+          </p>
+          <div class="footer-legal-links">
+            <span>Client-side Demo</span>
+            <span>&bull;</span>
+            <a href="#home" id="footer-clear-demo-data" title="Reset LocalStorage Bookings">Reset Demo Data</a>
+            <span>&bull;</span>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==============================================
+       MODALS & FLOATING CONTROLS
+  ============================================== -->
+
+  <!-- 1. ROOM DETAILS MODAL -->
+  <div class="modal-backdrop" id="room-details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-room-title" hidden>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content glass-panel">
+        <button type="button" class="modal-close-btn" id="close-room-details" aria-label="Close details modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="room-modal-body" id="room-modal-content">
+          <!-- Populated dynamically by script.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. INTERACTIVE BOOKING MODAL -->
+  <div class="modal-backdrop" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" hidden>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-tag"><i class="fa-solid fa-crown"></i> RESERVATION SYSTEM</span>
+            <h3 class="modal-title" id="booking-modal-title">Book Your Luxury Stay</h3>
+          </div>
+          <button type="button" class="modal-close-btn" id="close-booking-modal" aria-label="Close booking modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="modal-notice-banner">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span><strong>College Practical Demo:</strong> This reservation form simulates booking logic, date validation, and price calculations. No actual payment or credit card is required.</span>
+        </div>
+
+        <form id="booking-form" class="booking-form" novalidate>
+          <div class="booking-modal-grid">
+            <!-- Left Side: Inputs -->
+            <div class="booking-inputs-column">
+              <h4 class="form-section-title"><i class="fa-solid fa-user"></i> Guest Information</h4>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="book-name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="book-name" name="guestName" class="form-input" placeholder="e.g. Arjun Singhania" required>
+                  <span class="error-msg" id="book-name-error">Please provide guest full name.</span>
+                </div>
+                <div class="form-group">
+                  <label for="book-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="book-phone" name="phone" class="form-input" placeholder="e.g. 9876543210" required>
+                  <span class="error-msg" id="book-phone-error">Please provide a valid phone number.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="book-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="book-email" name="email" class="form-input" placeholder="e.g. arjun@example.com" required>
+                <span class="error-msg" id="book-email-error">Please provide a valid email address.</span>
+              </div>
+
+              <h4 class="form-section-title mt-3"><i class="fa-solid fa-bed"></i> Room &amp; Itinerary</h4>
+              <div class="form-group">
+                <label for="book-room">Select Accommodation <span class="required">*</span></label>
+                <select id="book-room" name="roomId" class="form-input" required>
+                  <!-- Populated dynamically via script.js -->
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="book-checkin">Check-in Date <span class="required">*</span></label>
+                  <input type="date" id="book-checkin" name="checkin" class="form-input" required>
+                  <span class="error-msg" id="book-checkin-error">Check-in must be today or later.</span>
+                </div>
+                <div class="form-group">
+                  <label for="book-checkout">Check-out Date <span class="required">*</span></label>
+                  <input type="date" id="book-checkout" name="checkout" class="form-input" required>
+                  <span class="error-msg" id="book-checkout-error">Check-out must be after check-in.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="book-adults"><i class="fa-solid fa-user"></i> Adults</label>
+                  <select id="book-adults" name="adults" class="form-input">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Adults</option>
+                    <option value="4">4 Adults</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="book-children"><i class="fa-solid fa-child"></i> Children</label>
+                  <select id="book-children" name="children" class="form-input">
+                    <option value="0" selected>0 Children</option>
+                    <option value="1">1 Child</option>
+                    <option value="2">2 Children</option>
+                    <option value="3">3 Children</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="book-rooms-count"><i class="fa-solid fa-door-closed"></i> Rooms</label>
+                  <select id="book-rooms-count" name="roomsCount" class="form-input">
+                    <option value="1" selected>1 Room</option>
+                    <option value="2">2 Rooms</option>
+                    <option value="3">3 Rooms</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="book-requests">Special Requests / Dietary Preferences</label>
+                <textarea id="book-requests" name="specialRequests" rows="2" class="form-input" placeholder="e.g. Quiet upper floor, feather-free pillows, airport transfer, anniversary flowers"></textarea>
+              </div>
+
+              <div class="form-group promo-group">
+                <label for="book-promo">Promotion / Discount Code</label>
+                <div class="promo-input-wrap">
+                  <input type="text" id="book-promo" name="promoCode" class="form-input" placeholder="e.g. HORIZON10, WEEKEND15">
+                  <button type="button" class="btn btn-outline-gold promo-apply-btn" id="apply-promo-btn">Apply</button>
+                </div>
+                <span class="promo-feedback" id="promo-feedback"></span>
+              </div>
+            </div>
+
+            <!-- Right Side: Live Price Summary Breakdown -->
+            <div class="booking-summary-column">
+              <div class="price-summary-card">
+                <h4 class="summary-card-title"><i class="fa-solid fa-receipt"></i> Booking Summary</h4>
+
+                <div class="summary-room-preview" id="summary-room-preview">
+                  <img src="assets/images/placeholder.svg" alt="Selected Room" id="summary-room-img" class="summary-room-thumb">
+                  <div class="summary-room-meta">
+                    <h5 id="summary-room-name">Deluxe Room</h5>
+                    <span id="summary-room-rate" class="summary-rate-badge">₹6,500 / night</span>
+                  </div>
+                </div>
+
+                <div class="summary-line-items">
+                  <div class="summary-row">
+                    <span>Stay Duration:</span>
+                    <strong id="summary-nights-text">1 Night</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Rooms Count:</span>
+                    <strong id="summary-rooms-text">1 Room</strong>
+                  </div>
+                  <div class="summary-row">
+                    <span>Guests:</span>
+                    <strong id="summary-guests-text">2 Adults</strong>
+                  </div>
+
+                  <hr class="summary-divider">
+
+                  <div class="summary-row">
+                    <span>Base Room Tariff:</span>
+                    <span id="summary-base-tariff">₹6,500</span>
+                  </div>
+                  <div class="summary-row text-success" id="summary-discount-row" style="display: none;">
+                    <span>Privilege Discount (<span id="summary-discount-label">0%</span>):</span>
+                    <span id="summary-discount-val">-₹0</span>
+                  </div>
+                  <div class="summary-row">
+                    <span>Luxury GST &amp; Service (18%):</span>
+                    <span id="summary-tax-val">₹1,170</span>
+                  </div>
+
+                  <hr class="summary-divider">
+
+                  <div class="summary-row summary-grand-total">
+                    <span>Estimated Total:</span>
+                    <strong class="total-price" id="summary-total-val">₹7,670</strong>
+                  </div>
+                  <p class="summary-tax-note">* Taxes and service charges calculated based on Indian GST regulations.</p>
+                </div>
+
+                <div class="summary-perks-box">
+                  <h6><i class="fa-solid fa-gift text-gold"></i> Included with your booking:</h6>
+                  <ul>
+                    <li><i class="fa-solid fa-check text-gold"></i> Complimentary Gourmet Breakfast</li>
+                    <li><i class="fa-solid fa-check text-gold"></i> Free High-Speed Wi-Fi</li>
+                    <li><i class="fa-solid fa-check text-gold"></i> Free Cancellation up to 24h prior</li>
+                  </ul>
+                </div>
+
+                <button type="submit" class="btn btn-gold w-100 confirm-booking-btn" id="confirm-booking-btn">
+                  <i class="fa-solid fa-lock"></i>
+                  <span>Confirm Demo Booking</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BOOKING SUCCESS CONFIRMATION MODAL -->
+  <div class="modal-backdrop" id="confirmation-modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title" hidden>
+    <div class="modal-dialog modal-md">
+      <div class="modal-content glass-panel text-center">
+        <div class="success-animation-wrap">
+          <div class="success-circle">
+            <i class="fa-solid fa-check"></i>
+          </div>
+        </div>
+
+        <span class="modal-tag"><i class="fa-solid fa-circle-check"></i> RESERVATION CONFIRMED</span>
+        <h3 class="modal-title" id="confirm-modal-title">Thank You for Choosing Grand Horizon!</h3>
+        <p class="confirm-subtitle">Your demo reservation has been recorded successfully in your browser storage.</p>
+
+        <!-- Printable Voucher Card -->
+        <div class="voucher-preview-card" id="voucher-printable-area">
+          <div class="voucher-header">
+            <div class="voucher-brand">
+              <i class="fa-solid fa-crown text-gold"></i>
+              <strong>GRAND HORIZON</strong>
+              <small>HOTEL VOUCHER</small>
+            </div>
+            <div class="voucher-ref">
+              <span>REFERENCE CODE</span>
+              <strong id="voucher-ref-code" class="ref-code">GH-2026-0000</strong>
+            </div>
+          </div>
+
+          <div class="voucher-details-grid">
+            <div class="voucher-item">
+              <label>Guest Name</label>
+              <strong id="voucher-guest-name">Eleanor Vance</strong>
+            </div>
+            <div class="voucher-item">
+              <label>Room Category</label>
+              <strong id="voucher-room-name">Ocean View Suite</strong>
+            </div>
+            <div class="voucher-item">
+              <label>Check-in</label>
+              <strong id="voucher-checkin">2026-11-01</strong>
+            </div>
+            <div class="voucher-item">
+              <label>Check-out</label>
+              <strong id="voucher-checkout">2026-11-04</strong>
+            </div>
+            <div class="voucher-item">
+              <label>Guests &amp; Rooms</label>
+              <strong id="voucher-occupancy">2 Adults &bull; 1 Room</strong>
+            </div>
+            <div class="voucher-item">
+              <label>Total Tariff</label>
+              <strong id="voucher-total-paid" class="text-gold">₹21,830</strong>
+            </div>
+          </div>
+
+          <div class="voucher-footer">
+            <span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Confirmed (Demo)</span>
+            <small>Candolim Beach, Goa &bull; concierge@grandhorizon-demo.com</small>
+          </div>
+        </div>
+
+        <div class="confirm-actions-row">
+          <button type="button" class="btn btn-outline" id="print-voucher-btn">
+            <i class="fa-solid fa-print"></i> Print / Save Voucher
+          </button>
+          <button type="button" class="btn btn-gold" id="view-in-my-bookings-btn">
+            <i class="fa-solid fa-list-check"></i> View My Bookings
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MY BOOKINGS DRAWER / MODAL -->
+  <div class="modal-backdrop" id="my-bookings-modal" role="dialog" aria-modal="true" aria-labelledby="my-bookings-title" hidden>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-tag"><i class="fa-solid fa-clock-rotate-left"></i> DEMO BOOKING MANAGER</span>
+            <h3 class="modal-title" id="my-bookings-title">My Saved Reservations</h3>
+          </div>
+          <button type="button" class="modal-close-btn" id="close-my-bookings" aria-label="Close my bookings modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="my-bookings-body">
+          <div class="my-bookings-info-bar">
+            <span><i class="fa-solid fa-database text-gold"></i> Saved locally in browser (LocalStorage). Persistent across refreshes.</span>
+            <button type="button" class="btn-text-danger" id="clear-all-bookings-btn">
+              <i class="fa-regular fa-trash-can"></i> Clear All Demo Bookings
+            </button>
+          </div>
+
+          <!-- Bookings List Container -->
+          <div class="saved-bookings-list" id="saved-bookings-list">
+            <!-- Rendered dynamically by script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CANCEL BOOKING CONFIRMATION DIALOG -->
+  <div class="modal-backdrop" id="cancel-dialog-modal" role="dialog" aria-modal="true" aria-labelledby="cancel-dialog-title" hidden>
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content glass-panel text-center">
+        <div class="dialog-icon-warning">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h4 class="dialog-title" id="cancel-dialog-title">Cancel Reservation?</h4>
+        <p class="dialog-desc">Are you sure you want to cancel booking <strong id="cancel-ref-text">GH-XXXX</strong>? This will remove the demo record from your browser storage.</p>
+        <div class="dialog-buttons">
+          <button type="button" class="btn btn-outline" id="abort-cancel-btn">Keep Reservation</button>
+          <button type="button" class="btn btn-danger" id="confirm-cancel-btn">Yes, Cancel Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. GALLERY LIGHTBOX MODAL -->
+  <div class="lightbox-backdrop" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image Lightbox" hidden>
+    <button type="button" class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox (Esc)">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <button type="button" class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Previous Image (Left Arrow)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-content-wrap">
+      <img src="assets/images/placeholder.svg" alt="Lightbox Preview" id="lightbox-img" class="lightbox-image">
+      <div class="lightbox-caption-bar">
+        <div class="lightbox-text">
+          <h4 id="lightbox-title">Grand Horizon Horizon View</h4>
+          <p id="lightbox-category" class="text-gold">Rooms &amp; Suites</p>
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter">1 / 8</div>
+      </div>
+    </div>
+    <button type="button" class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Next Image (Right Arrow)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <!-- 7. FLOATING TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- 8. SCROLL TO TOP FLOATING BUTTON -->
+  <button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript Main Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
