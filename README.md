@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Project Overview
+##  Project Overview
 
 **Grand Horizon – Luxury Stay & Resort** is a five-star hotel booking website created using pure client-side web technologies (HTML5, CSS3, and modern Vanilla JavaScript). The project simulates an authentic luxury resort digital experience along the coastal shores of Candolim, Goa.
 
